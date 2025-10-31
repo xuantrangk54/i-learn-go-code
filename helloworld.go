@@ -19,6 +19,7 @@ func main() {
 		jobs <- j
 	}
 	close(jobs) // đóng channel jobs (không gửi thêm job nữa)
+	fmt.Println("close channel")
 
 	// Nhận kết quả từ 5 công việc
 	for r := 1; r <= 5; r++ {
