@@ -1,20 +1,16 @@
 package main
 
-import (
-	"fmt"
-	greetingsx2 "ilearngocode/hello/stringlib"
+import "fmt"
 
-	greetings "github.com/evenskylearngo/greetings/greetings"
-)
+func Sqrt(x float64) float64 {
+	z := 1.0
+	for i := 0; i < 10; i++ {
+		z -= (z*z - x) / (2 * z)
+		fmt.Println(z)
+	}
+	return z
+}
 
 func main() {
-	x1 := greetingsx2.RandomFormat()
-	fmt.Println(x1)
-	fmt.Println(greetings.Hello("Go Developer"))
-	fmt.Println(greetings.Goodbye("trang"))
-	fmt.Println(greetings.Plus(1, 2))
-	_, err := greetings.Hello("")
-	if err != nil {
-		fmt.Println("Error:", err)
-	}
+	fmt.Println(Sqrt(2))
 }
